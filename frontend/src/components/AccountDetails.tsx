@@ -10,7 +10,7 @@ interface AccountDetailsProps {
 
 const AccountDetails: React.FC<AccountDetailsProps> = ({ account, balance, transactions }) => {
   return (
-    <div className="bg-white shadow rounded-lg p-6 mt-6">
+    <div className="bg-white rounded-lg p-6 mt-6 mb-6 bg-opacity-50 backdrop-blur-lg shadow-lg">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4">{account.name}</h2>
       {balance ? (
         <div className="mb-4">
