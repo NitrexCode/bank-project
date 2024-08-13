@@ -1,14 +1,16 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { ApiService } from '../services/ApiService';
 import { Account, Balance, Transaction } from '../types';
 import AccountList from './AccountList';
 import AccountDetails from './AccountDetails';
+import { convertAccountNumber } from '../utils/convertAccountNumber';
 
 const Accounts: React.FC = () => {
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [selectedAccount, setSelectedAccount] = useState<Account | null>(null);
   const [balance, setBalance] = useState<Balance | null>(null);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+
   const apiService = useMemo(() => new ApiService(), []);
 
   useEffect(() => {
@@ -26,12 +28,12 @@ const Accounts: React.FC = () => {
 
   useEffect(() => {
     if (selectedAccount) {
-        console.log(selectedAccount)
+      const accountNumber = convertAccountNumber(selectedAccount.identification.otherAccountNumber);
       const fetchAccountDetails = async () => {
         try {
-          const balanceData = await apiService.getAccountBalance(selectedAccount.identification.otherAccountNumber);
+          const balanceData = await apiService.getAccountBalance(accountNumber.toString());
           setBalance(balanceData);
-          const transactionsData = await apiService.getAccountTransactions(selectedAccount.identification.otherAccountNumber);
+          const transactionsData = await apiService.getAccountTransactions(accountNumber.toString());
           setTransactions(transactionsData);
         } catch (error) {
           console.error('Error fetching account details:', error);
