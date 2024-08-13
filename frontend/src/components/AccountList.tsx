@@ -8,13 +8,13 @@ interface AccountListProps {
 
 const AccountList: React.FC<AccountListProps> = ({ accounts, onSelectAccount }) => {
   return (
-    <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-4 shadow-lg">
-      <h2 className="text-xl font-bold mb-4">Accounts</h2>
+    <div className="bg-white shadow rounded-lg p-6 mb-6">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Účty</h2>
       <ul>
         {accounts.map((account) => (
           <li
             key={account.id}
-            className="cursor-pointer p-2 mb-2 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 hover:shadow-xl transition-all duration-300"
+            className="cursor-pointer p-3 mb-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-200"
             onClick={() => onSelectAccount(account)}
           >
             {account.name}
