@@ -10,14 +10,14 @@ interface AccountDetailsProps {
 
 const AccountDetails: React.FC<AccountDetailsProps> = ({ account, balance, transactions }) => {
   return (
-    <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-4 shadow-lg mt-8">
-      <h2 className="text-xl font-bold mb-2">{account.name}</h2>
+    <div className="bg-white shadow rounded-lg p-6 mt-6">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">{account.name}</h2>
       {balance ? (
         <div className="mb-4">
-          <p>Balance: {balance.amount.value} {balance.amount.currency}</p>
+          <p className="text-lg text-gray-600">Zůstatek: {balance.amount.value} {balance.amount.currency}</p>
         </div>
       ) : (
-        <p>Loading balance...</p>
+        <p className="text-gray-500">Načítání zůstatku</p>
       )}
       <TransactionList transactions={transactions} />
     </div>
