@@ -3,7 +3,7 @@ import Accounts from './components/Accounts';
 
 const App: React.FC = () => {
   return (
-    <div className="container mx-auto bg-slate-600">
+    <div className="container mx-auto bg-orange-500">
       <Accounts />
     </div>
   );
