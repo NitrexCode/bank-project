@@ -2,19 +2,19 @@
 
 ## Available Scripts
 
-In the project directory /frontend, you can run:
+### run the first
+
+In the project directory /frontend, you can run: 
 
 ### `npm start`
 
-### `npm test`
-
 ### `npm run build`
-
-### `npm run eject`
 
 # Back-end
 
 ## Available Scripts
+
+### run the second because frontend listen the port 3001 for api if you have something running on port 3001 you need to change it in frontend code
 
 In the project directory /backend, you can run:
 
