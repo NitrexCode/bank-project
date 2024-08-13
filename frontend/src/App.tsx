@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Accounts from './components/Accounts';
 
 const App: React.FC = () => {
