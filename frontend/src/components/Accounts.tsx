@@ -45,7 +45,7 @@ const Accounts: React.FC = () => {
   }, [selectedAccount, apiService]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <div className="w-full max-w-lg">
         <AccountList accounts={accounts} onSelectAccount={setSelectedAccount} />
         {selectedAccount && (
